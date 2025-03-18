@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Unito</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="theme.css">
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+        <script src="https://kit.fontawesome.com/ac6d0c0a18.js" crossorigin="anonymous"></script>
+    </head>
+    <body id="main" class="light">
+        <!-- WEBSITE NAME & ICON -->
+        <div class="website-name">
+            <i id="icon" class="fa-solid fa-calculator"></i>
+            <h1>Unit Calculator</h1>
+            <p>Imperial - Metric</p>
+        </div>
+
+        <!-- HEADER AND NAVIGATION -->
+        <div class="nav" id="navBar">
+            <input id="length" class="navBtn navSelected" type="button" value="Length" onclick="toggle(this.id)">
+            <input id="weight" class="navBtn navUnselected" type="button" value="Weight" onclick="toggle(this.id)">
+            <input id="volume" class="navBtn navUnselected" type="button" value="Volume (Liquid)" onclick="toggle(this.id)">
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <!-- LENGTH -->
+            <div id="cal_length">
+                <div class="calculators">
+                    <div class="calculator">
+                        <h2>Miles To Kilometers</h2>
+                        <input id="userInput_mToKm" class="userInput" type="number" placeholder="Number" oninput="convert_mToKm()">
+                        <select class="type" id="type_mToKm" onchange="convert_mToKm()">
+                            <option value="mToKm">Miles To Kilometers</option>
+                            <option value="kmToM">Miles To Meters</option>
+                        </select>
+                        <p>Result: <span id="result_mToKm" onclick="copyText(this.id)">---</span> </p>
+                    </div>
+                    <div class="calculator">
+                        <h2>Meters To Feet</h2>
+                        <input id="userInput_mToFt" class="userInput" type="number" placeholder="Number" oninput="convert_mToFt()">
+                        <select class="type" id="type_mToFt" onchange="convert_mToFt()">
+                            <option value="mToFt">Meters To Feet</option>
+                            <option value="ftToM">Feet To Meters</option>
+                        </select>
+                        <p>Result: <span id="result_mToFt" onclick="copyText(this.id)">---</span> </p>
+                    </div>
+                    <div class="calculator">
+                        <h2>Yards To Meters</h2>
+                        <input id="userInput_ydToM" class="userInput" type="number" placeholder="Number" oninput="convert_ydToM()">
+                        <select class="type" id="type_ydToM" onchange="convert_ydToM()">
+                            <option value="ydToM">Yards To Meters</option>
+                            <option value="mToYd">Meters To Yards</option>
+                        </select>
+                        <p>Result: <span id="result_ydToM" onclick="copyText(this.id)">---</span> </p>
+                    </div>
+                    <div class="calculator">
+                        <h2>Centimeters To Inches</h2>
+                        <input id="userInput_cmToIn" class="userInput" type="number" placeholder="Number" oninput="convert_cmToIn()">
+                        <select class="type" id="type_cmToIn" onchange="convert_cmToIn()">
+                            <option value="cmToIn">Centimeters To Inches</option>
+                            <option value="inToCm">Inches To Centimeters</option>
+                        </select>
+                        <p>Result: <span id="result_cmToIn"  onclick="copyText(this.id)">---</span> </p>
+                    </div>
+                    <div class="calculator">
+                        <h2>Feet To Centimeters</h2>
+                        <input id="userInput_ftToCm" class="userInput" type="number" placeholder="Number" oninput="convert_ftToCm()">
+                        <select class="type" id="type_ftToCm" onchange="convert_ftToCm()">
+                            <option value="ftToCm">Feet To Centimeters</option>
+                            <option value="inToCm">Centimeters To Feet</option>
+                        </select>
+                        <p>Result: <span id="result_ftToCm" onclick="copyText(this.id)">---</span> </p>
+                    </div>
+                    <div class="calculator">
+                        <h2>Millimeters To Inches</h2>
+                        <input id="userInput_mmToIn" class="userInput" type="number" placeholder="Number" oninput="convert_mmToIn()">
+                        <select class="type" id="type_mmToIn" onchange="convert_mmToIn()">
+                            <option value="mmToIn">Millimeters To Inches</option>
+                            <option value="inToMm">Inches To Millimeters</option>
+                        </select>
+                        <p>Result: <span id="result_mmToIn" onclick="copyText(this.id)">---</span> </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEIGHT -->
+            <div id="cal_weight">
+                <div class="calculators">
+                    <div class="calculator">
+                        <h2>Tonnes To Imeprial Tons</h2>
+                        <input id="userInput_tnToItn" class="userInput" type="number" placeholder="Number" oninput="convert_tnToItn()">
+                        <select class="type" id="type_tnToItn" onchange="convert_tnToItn()">
+                            <option value="tnToItn">Tonnes To Imeprial-Tons</option>
+                            <option value="itnToTn">Imperial-Tones To Tonnes</option>
+                        </select>
+                        <p>Result: <span id="result_tnToItn" onclick="copyText(this.id)">---</span> </p>
+                    </div>
+                    <div class="calculator">
+                        <h2>Kilograms To Pounds</h2>
+                        <input id="userInput_kgToLb" class="userInput" type="number" placeholder="Number" oninput="convert_kgToLb()">
+                        <select class="type" id="type_kgToLb" onchange="convert_kgToLb()">
+                            <option value="kgToLb">Kilograms To Pounds</option>
+                            <option value="lbToKg">Pounds To Kilograms</option>
+                        </select>
+                        <p>Result: <span id="result_kgToLb" onclick="copyText(this.id)">---</span> </p>
+                    </div>
+                    <div class="calculator">
+                        <h2>Pounds To Ounces</h2>
+                        <input id="userInput_lbToOz" class="userInput" type="number" placeholder="Number" oninput="convert_lbToOz()">
+                        <select class="type" id="type_lbToOz" onchange="convert_lbToOz()">
+                            <option value="lbToOz">Pounds To Ounces</option>
+                            <option value="ozToLb">Ounces To Pounds</option>
+                        </select>
+                        <p>Result: <span id="result_lbToOz" onclick="copyText(this.id)">---</span> </p>
+                    </div>
+                    <div class="calculator">
+                        <h2>Grams To Ounces</h2>
+                        <input id="userInput_gToOz" class="userInput" type="number" placeholder="Number" oninput="convert_gToOz()">
+                        <select class="type" id="type_gToOz" onchange="convert_gToOz()">
+                            <option value="gToOz">Grams To Ounches</option>
+                            <option value="ozToLb">Ounces To Grams</option>
+                        </select>
+                        <p>Result: <span id="result_gToOz" onclick="copyText(this.id)">---</span> </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VOLUME -->
+            <div id="cal_volume">
+                <div class="calculators">
+                    <div class="calculator">
+                        <h2>Litres To Cups</h2>
+                        <input id="userInput_lToCup" class="userInput" type="number" placeholder="Number" oninput="convert_lToCup()">
+                        <select class="type" id="type_lToCup" onchange="convert_lToCup()">
+                            <option value="lToCup">Litres To Cups</option>
+                            <option value="cupToL">Cups To Litres</option>
+                        </select>
+                        <p>Result: <span id="result_lToCup" onclick="copyText(this.id)">---</span> </p>
+                    </div>
+                    <div class="calculator">
+                        <h2>Millilitres To Teaspoons</h2>
+                        <input id="userInput_mlToTsp" class="userInput" type="number" placeholder="Number" oninput="convert_mlToTsp()">
+                        <select class="type" id="type_mlToTsp" onchange="convert_mlToTsp()">
+                            <option value="mlToTsp">Millilitres To Teaspoons</option>
+                            <option value="tspToMl">Teaspoons To Millilitres</option>
+                        </select>
+                        <p>Result: <span id="result_mlToTsp" onclick="copyText(this.id)">---</span> </p>
+                    </div>
+                    <div class="calculator">
+                        <h2>Millilitres To Tablespoons</h2>
+                        <input id="userInput_mlToTbsp" class="userInput" type="number" placeholder="Number" oninput="convert_mlToTbsp()">
+                        <select class="type" id="type_mlToTbsp" onchange="convert_mlToTbsp()">
+                            <option value="mlToTbsp">Millilitres To Tablespoons</option>
+                            <option value="tspToMl">Tablespoons To Millilitres</option>
+                        </select>
+                        <p>Result: <span id="result_mlToTbsp" onclick="copyText(this.id)">---</span> </p>
+                    </div>
+                    <div class="calculator">
+                        <h2>Litres To Gallons</h2>
+                        <input id="userInput_lToGal" class="userInput" type="number" placeholder="Number" oninput="convert_lToGal()">
+                        <select class="type" id="type_lToGal" onchange="convert_lToGal()">
+                            <option value="lToGal">Litres To Gallons</option>
+                            <option value="tspToMl">Gallons To Litres</option>
+                        </select>
+                        <p>Result: <span id="result_lToGal" onclick="copyText(this.id)">---</span> </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="toggleContainer" onclick="toggleDarkMode()">
+                <i id="toggle" class="fa-solid fa-moon">🌚</i>
+            </div>
+            <select id="dp_select" class="dp" onchange="update_dp()">
+                <option disabled>D.P. Count</option>
+                <option value="0">0 d.p.</option>
+                <option value="1">1 d.p.</option>
+                <option value="2">2 d.p.</option>
+                <option value="3" selected>3 d.p.</option>
+                <option value="4">4 d.p.</option>
+                <option value="5">5 d.p.</option>
+                <option value="6">6 d.p.</option>
+            </select>
+        </div>
+    </body>
+    <script src="main_fuctions.js"></script>
+    <script src="length_math.js"></script>
+    <script src="weight_math.js"></script>
+    <script src="volume_math.js"></script>
+</html>
