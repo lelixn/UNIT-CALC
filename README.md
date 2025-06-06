@@ -2,6 +2,7 @@
 UNIT-CALC is a simple and intuitive unit converter application designed to convert between different units of measurement such as length, weight, temperature, and more.
 
 🚀 Features
+---
 🔁 Convert between various units (e.g., meters to kilometers, Celsius to Fahrenheit)
 
 ⚡ Fast and responsive interface
@@ -11,9 +12,10 @@ UNIT-CALC is a simple and intuitive unit converter application designed to conve
 📱 Mobile-friendly design
 
 🎨 Clean and minimal UI
+---
 
 🛠️ Tech Stack
-(Update this based on what you used)
+```
 
 HTML, CSS, JavaScript
 
@@ -22,6 +24,7 @@ React (if used)
 Tailwind CSS (if used)
 
 Node.js (if backend exists)
+```
 
 📦 Installation
 ```
